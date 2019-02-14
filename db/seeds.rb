@@ -23,7 +23,7 @@ Task.destroy_all
         image: 'https://www.rockandpop.cl/wp-content/uploads/2018/09/empanadas1-e16b9748eacff4993015119479206259-640-0.jpg'   
     },
     {
-        name:'Bailar una patita',
+        name:'Bailar una patita de cueca',
         description: '',
         image: 'https://www.cooperativa.cl/noticias/site/artic/20180910/imag/foto_0000000120180910093518.jpg'
     },

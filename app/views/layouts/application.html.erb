@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Todo18App</title>
+    <title>Todo 18 App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -15,13 +16,20 @@
 
   <body>
     <%= render 'partials/navbar' %>
+    
     <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
-        </div>
+      <div class="mb-5">
+        <br>
       </div>
+        
+        <% if notice.present? %>
+          <div class="row">
+            <div class="col-12">
+              <p class="alert alert-info"><%= notice %></p>
+              <p class="alert"><%= alert %></p>
+            </div>
+          </div>
+        <% end %>
 
       <%= yield %>
     </div>

@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="<%= root_path %>">Project App</a>
+  <a class="navbar-brand" href="<%= root_path %>"> <img src="http://app-prod-icarito.s3-us-west-1.amazonaws.com/wp-content/uploads/2010/03/10163300/716531.jpg" alt="Bandera Chilena" height="30vh" title="Ir a Home"> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,7 +7,10 @@
     <ul class="navbar-nav ml-auto">     
       <% if user_signed_in? %>
         <li class="nav-item">
-          <a href=# class="nav-link"><i class="far fa-flag"></i> <%= @task_count %></a>
+          <a href=# class="nav-link "  title="Tareas Completadas"><i class="far fa-flag" style=" color: red;"></i> <%= @task_count %>/<%= @task_total %> </a>
+        </li>
+        <li class="nav-item">
+          <a href=# class="nav-link" > Hola otra vez <%= current_user.name %> <i class="far fa-smile-wink" style=" color: yellow;"></i></a>
         </li>
         <li class="nav-item">
           <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'nav-link' %>

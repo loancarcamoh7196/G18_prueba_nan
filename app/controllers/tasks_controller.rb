@@ -1,11 +1,13 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show ]
+  before_action :task_count, only: [:index, :show]
+  before_action :task_total, only: [:index, :show]
+
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @task_count = List.where(user: current_user).count
     @tasks = Task.all
     @in_list = List.where(user: current_user).pluck(:task_id)
   end
@@ -65,7 +67,13 @@ class TasksController < ApplicationController
     end
   end
 
-  
+  def task_count
+    @task_count = List.where(user: current_user).count
+  end
+
+  def task_total
+    @task_total = Task.all.count
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
