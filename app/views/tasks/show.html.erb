@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-12">
+    <p>
+      <strong>Name:</strong>
+      <%= @task.name %>
+    </p>
+
+    <p>
+      <strong>Image:</strong>
+      <%= @task.image %>
+    </p>
+
+    
+  </div>
+  <div class="col-12">
+    <%= render 'list' %>
+  </div>
+  <%= link_to 'Edit', edit_task_path(@task) %> |
+  <%= link_to 'Back', tasks_path %>
+</div>
